@@ -1,18 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>获客创建</title>
 
     <link href="../../node_modules/easyui/themes/gray/easyui.css" rel="stylesheet" />
     <link href="../../node_modules/easyui/themes/icon.css" rel="stylesheet" />
+    <link href="../pages.css" rel="stylesheet" />
+    <link href="../hkcj/hkcj.css" rel="stylesheet" />
 </head>
+
 <body>
-    
+
+    <div id="tt" class="easyui-tabs" data-options="border: false, " style="width: 100%; height: inherit; ">
+        <div title="基本资料">
+            <div style="display: flex;">
+                <div class="inputDiv" style="width: fit-content; height: fit-content; flex-basis: 300px; ">
+                    <div>
+                        <label class="inputLabel">资料号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label class="inputLabel">姓名</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">性别</label>
+                        <input id="man-checkbox" class="easyui-checkbox"
+                            data-options="label:'男', labelWidth: '20px', checked: true, " />
+                        <input id="woman-checkbox" class="easyui-checkbox"
+                            data-options="label:'女', labelWidth: '20px', " />
+                    </div>
+                    <div>
+                        <label class="inputLabel">日期</label>
+                        <input class="easyui-datebox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">手机号</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">创建人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label class="inputLabel">创建时间</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+
+                <div class="inputDiv" style="width: fit-content; height: fit-content; flex-basis: 300px; ">
+                    <div>
+                        <label class="inputLabel">微信号</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">推荐人</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">来源</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">备注</label>
+                        <input class="easyui-textbox" data-options="multiline: true, " style="height: 65px;" />
+                    </div>
+                    <div>
+                        <label class="inputLabel">微信维护</label>
+                        <input class="easyui-textbox" />
+                    </div>
+                </div>
+            </div>
+
+            <a class="easyui-linkbutton"
+                style="width: 60px; margin-top: 20px; margin-left: 10px; margin-bottom: 15px; font-size: 20px; ">保存</a>
+        </div>
+
+
+        <div title="图片库">
+            <a class="easyui-linkbutton" style="margin-top: 10px; margin-left: 10px; ">上传</a>
+            <a class="easyui-linkbutton" data-options="iconCls: 'icon-reload', "
+                style="width: 35px; margin-top: 10px; "></a>
+            <div style="width: inherit; height: inherit; border-top: 1px solid; margin-top: 10px; "></div>
+        </div>
+
+
+        <div title="维护记录">
+            <table id="dg" style="width: 1000px; height: 800px;">
+                <thead>
+                    <tr>
+                        <!-- 修改field名称 -->
+                        <th data-options="field: 'xuhao', halign: 'center', width: '60px', ">序号</th>
+                        <th data-options="field: 'riqi', halign: 'center', width: '120px', ">日期</th>
+                        <th data-options="field: 'chuangjianren', halign: 'center', width: '80px', ">创建人</th>
+                        <th data-options="field: 'goutongneirong', halign: 'center', width: '250px' ">沟通内容</th>
+                        <th data-options="field: 'caozuo', halign: 'center', width: '200px' ">操作</th>
+                    </tr>
+                </thead>
+            </table>
+            <a id="add-btn" class="easyui-linkbutton" style="width: 60px; ">新建</a>
+            <!-- 修改、删除按钮 -->
+            <a id="edit-btn" class="easyui-linkbutton" style="width: 60px; ">修改</a>
+            <a id="del-btn" class="easyui-linkbutton" style="width: 60px; ">删除</a>
+        </div>
+    </div>
+
+    <div id="win" class="easyui-window"
+        data-options="collapsible: false, minimizable: false, maximizable: false, closable: true, closed: true, "
+        style="width: fit-content; height: fit-content; " title="新建/修改">
+        <div class="inputDiv" style="width: fit-content; height: fit-content; margin-right: 20px; ">
+            <div>
+                <label class="inputLabel">序号</label>
+                <input class="easyui-textbox" data-options="editable: false, " />
+            </div>
+            <div>
+                <label class="inputLabel">日期</label>
+                <input class="easyui-textbox" data-options="editable: false, " />
+            </div>
+            <div>
+                <label class="inputLabel">维护人</label>
+                <input class="easyui-textbox" data-options="editable: false, " />
+            </div>
+            <div>
+                <label class="inputLabel">沟通内容</label>
+                <input class="easyui-textbox" data-options="multiline: true, " style="width: 400px; height: 160px; " />
+            </div>
+        </div>
+        <a id="save-btn" class="easyui-linkbutton"
+            style="width: 60px; margin-top: 10px; margin-bottom: 15px; margin-left: 73px; ">保存</a>
+        <a id="close-btn" class="easyui-linkbutton"
+            style="width: 60px; margin-top: 10px; margin-bottom: 15px; margin-left: 10px; ">关闭</a>
+    </div>
+
 
     <script src="../../node_modules/easyui/jquery.min.js"></script>
     <script src="../../node_modules/easyui/jquery.easyui.min.js"></script>
+    <script src="../../node_modules/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="application/javascript">
+
+        //基本资料 页面
+        $("#man-checkbox").checkbox({
+            onChange: function () {
+                if ($("#man-checkbox").checkbox("options").checked === true) {
+                    $("#woman-checkbox").checkbox("uncheck")
+                } else {
+                    $("#woman-checkbox").checkbox("check")
+                }
+            }
+        })
+        $("#woman-checkbox").checkbox({
+            onChange: function () {
+                if ($("#woman-checkbox").checkbox("options").checked === true) {
+                    $("#man-checkbox").checkbox("uncheck")
+                } else {
+                    $("#man-checkbox").checkbox("check")
+                }
+            }
+        })
+
+
+        //维护记录 页面
+        $("#dg").datagrid({
+            autoRowHeight: true,
+            ctrlSelect: true,
+            striped: true,
+            toolbar: "#add-btn,#edit-btn,#del-btn",
+            remoteSort: false,
+            pagination: true,
+            pageSize: "10",
+        })
+        $("#add-btn").linkbutton({
+            onClick: function () {
+                $("#win").window("open")
+            }
+        })
+        $("#edit-btn").linkbutton({
+            onClick: function () {
+                $("#win").window("open")
+            }
+        })
+        $("#del-btn").linkbutton({
+            onClick: function () {
+                $.messager.confirm({
+                    title: '确认删除',
+                    msg: "确认删除"  + "某某用户" + "的信息吗？",
+                    fn: function (r) {
+                        if (r) {
+                            alert("删除成功!")
+                        }
+                    }
+                });
+            }
+        })
+
+
+        //修建/修改 页面
+        $("#save-btn").linkbutton({
+            onClick: function () {
+                $("#win").window("close")
+            }
+        })
+        $("#close-btn").linkbutton({
+            onClick: function () {
+                $("#win").window("close")
+            }
+        })
+
+    </script>
 </body>
+
 </html>

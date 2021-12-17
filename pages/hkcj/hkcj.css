@@ -1,0 +1,9 @@
+.inputLabel{
+    display: inline-block;
+    width: 60px;
+}
+
+.inputDiv div{
+    margin-top: 15px;
+    margin-left: 10px;
+}
