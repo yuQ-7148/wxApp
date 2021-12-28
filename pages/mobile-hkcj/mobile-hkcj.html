@@ -5,20 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>获客创建</title>
+    <title>移动-获客创建</title>
 
     <link href="../../node_modules/easyui/themes/gray/easyui.css" rel="stylesheet" />
     <link href="../../node_modules/easyui/themes/icon.css" rel="stylesheet" />
     <link href="../pages.css" rel="stylesheet" />
-    <link href="../hkcj/hkcj.css" rel="stylesheet" />
 </head>
+
+
+<style>
+    .inputLabel {
+        display: inline-block;
+        width: 60px;
+    }
+
+    .inputDiv div {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+    .inputDiv input {
+        width: calc(100% - 120px);
+    }
+</style>
+
 
 <body>
 
     <div id="tt" class="easyui-tabs" data-options="border: false, " style="width: 100%; height: inherit; ">
-        <div title="基本资料">
-            <div style="display: flex;">
-                <div class="inputDiv" style="width: fit-content; height: fit-content; flex-basis: 300px; ">
+        <div title="基本资料" style="position: relative; ">
+            <div>
+                <div class="inputDiv" style="width: fit-content; height: fit-content; ">
                     <div>
                         <label class="inputLabel">资料号</label>
                         <input class="easyui-textbox" data-options="editable: false, " />
@@ -52,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="inputDiv" style="width: fit-content; height: fit-content; flex-basis: 300px; ">
+                <div class="inputDiv" style="width: fit-content; height: fit-content; ">
                     <div>
                         <label class="inputLabel">微信号</label>
                         <input class="easyui-textbox" />
@@ -77,7 +94,7 @@
             </div>
 
             <a class="easyui-linkbutton"
-                style="width: 60px; margin-top: 20px; margin-left: 10px; margin-bottom: 15px; font-size: 20px; ">保存</a>
+                style="width: 50%; height: 50px; margin-top: 20px; margin-left: 10px; margin-bottom: 15px; font-size: 20px; position: relative; left: 50%; transform: translate(-50%, 0); ">保存</a>
         </div>
 
 
@@ -90,7 +107,7 @@
 
 
         <div title="维护记录">
-            <table id="dg" style="width: 1000px; height: 800px;">
+            <table id="dg" style="width: 1000px; height: 800px; border: none; ">
                 <thead>
                     <tr>
                         <!-- 修改field名称 -->
@@ -211,7 +228,7 @@
                 }
             })
 
-            
+
         })
 
 
