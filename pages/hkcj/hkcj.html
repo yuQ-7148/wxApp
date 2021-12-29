@@ -69,9 +69,9 @@
                         <label class="inputLabel">备注</label>
                         <input class="easyui-textbox" data-options="multiline: true, " style="height: 65px;" />
                     </div>
-                    <div>
+                    <div style="position: relative;">
                         <label class="inputLabel">微信维护</label>
-                        <input class="easyui-textbox" />
+                        <div id="qrcode" style="width: 100px; height: 100px; position: absolute; top: -10px; left: 70px; "></div>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,8 @@
 
 
         <div title="图片库">
-            <a class="easyui-linkbutton" style="margin-top: 10px; margin-left: 10px; ">上传</a>
+            <a class="easyui-filebox" data-options="buttonText: '上传', multiple: true, accept: 'images/*', "
+                style="display: inline-block; margin-top: 10px; margin-left: 10px; "></a>
             <a class="easyui-linkbutton" data-options="iconCls: 'icon-reload', "
                 style="width: 35px; margin-top: 10px; "></a>
             <div style="width: inherit; height: inherit; border-top: 1px solid; margin-top: 10px; "></div>
@@ -140,6 +141,7 @@
     <script src="../../node_modules/easyui/jquery.min.js"></script>
     <script src="../../node_modules/easyui/jquery.easyui.min.js"></script>
     <script src="../../node_modules/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../../node_modules/qrcodejs/qrcode.min.js"></script>
     <script type="application/javascript">
 
         $(document).ready(function () {
@@ -162,6 +164,9 @@
                     }
                 }
             })
+
+
+            //图片库 页面
 
 
             //维护记录 页面
@@ -211,9 +216,18 @@
                 }
             })
 
-            
+
         })
 
+        
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "http://192.168.1.2:8000/pages/mobile-hkcj/mobile-hkcj.html",
+            width: 100,
+            height: 100,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
 
 
     </script>
