@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>移动-获客创建</title>
 
-    <link href="../../node_modules/easyui/themes/gray/easyui.css" rel="stylesheet" />
+    <link href="../../node_modules/easyui/themes/metro/easyui.css" rel="stylesheet" />
+    <link href="../../node_modules/easyui/themes/mobile.css" rel="stylesheet" />
     <link href="../../node_modules/easyui/themes/icon.css" rel="stylesheet" />
     <link href="../pages.css" rel="stylesheet" />
 </head>
@@ -27,12 +28,22 @@
     .inputDiv input {
         width: calc(100% - 120px);
     }
+
+    .win-inputDiv div{
+        width: 80%;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+    .win-inputDiv input {
+        width: 70%;
+    }
 </style>
 
 
 <body>
 
-    <div id="tt" class="easyui-tabs" data-options="border: false, " style="width: 100%; height: inherit; ">
+    <div id="tt" class="easyui-tabs" data-options="border: false, " style="width: inherit; height: inherit; ">
         <div title="基本资料" style="position: relative; ">
             <div>
                 <div class="inputDiv" style="width: fit-content; height: fit-content; ">
@@ -124,8 +135,8 @@
 
     <div id="win" class="easyui-window"
         data-options="collapsible: false, minimizable: false, maximizable: false, closable: true, closed: true, "
-        style="width: fit-content; height: fit-content; " title="新建/修改">
-        <div class="inputDiv" style="width: fit-content; height: fit-content; margin-right: 20px; ">
+        style="width: 80%; height: fit-content; " title="新建/修改">
+        <div class="win-inputDiv" style="width: fit-content; height: fit-content; margin-right: 20px; ">
             <div>
                 <label class="inputLabel">序号</label>
                 <input class="easyui-textbox" data-options="editable: false, " />
@@ -140,7 +151,7 @@
             </div>
             <div>
                 <label class="inputLabel">沟通内容</label>
-                <input class="easyui-textbox" data-options="multiline: true, " style="width: 400px; height: 160px; " />
+                <input class="easyui-textbox" data-options="multiline: true, " style="height: 160px; " />
             </div>
         </div>
         <a id="save-btn" class="easyui-linkbutton"
@@ -152,6 +163,7 @@
 
     <script src="../../node_modules/easyui/jquery.min.js"></script>
     <script src="../../node_modules/easyui/jquery.easyui.min.js"></script>
+    <script src="../../node_modules/easyui/jquery.easyui.mobile.js"></script>
     <script src="../../node_modules/easyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="application/javascript">
 
