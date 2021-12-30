@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动-搜索</title>
+
+    <link href="../../node_modules/easyui/themes/metro/easyui.css" rel="stylesheet" />
+    <link href="../../node_modules/easyui/themes/mobile.css" rel="stylesheet" />
+    <link href="../../node_modules/easyui/themes/icon.css" rel="stylesheet" />
+    <link href="../pages.css" rel="stylesheet" />
+</head>
+
+
+<style>
+    /* 搜索 页面 */
+    .userDiv {
+        position: sticky;
+        width: inherit;
+        margin-top: 20px;
+        padding-bottom: 15px;
+        border: 1px solid rgb(202, 202, 202);
+    }
+
+    .inputDiv {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .inputDiv div {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+    .inputDiv label {
+        display: inline-block;
+        width: 60px;
+    }
+
+    .inputDiv input {
+        width: 50%;
+    }
+
+    .more-btn {
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+    }
+
+
+    /* 条件筛选 页面 */
+    .win-inputDiv div {
+        width: 80%;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+    .win-inputDiv label {
+        display: inline-block;
+        width: 60px;
+    }
+
+    .win-inputDiv input {
+        width: 70%;
+    }
+</style>
+
+
+<body>
+    <div style="width: inherit; height: inherit; ">
+        <div
+            style="z-index: 8; position: fixed; top: 0px; width: 100%; height: fit-content; padding-bottom: 10px; border-bottom: 1px solid rgb(202, 202, 202); background-color: rgb(255, 255, 255); ">
+            <a id="search-btn" class="easyui-linkbutton" style="margin-top: 10px; ">搜索</a>
+            <a class="easyui-linkbutton" data-options="iconCls: 'icon-reload', "
+                style="width: 35px; margin-top: 10px; "></a>
+            <a class="easyui-linkbutton" style="position: absolute; right: 85px; margin-top: 10px; ">上一页</a>
+            <a class="easyui-linkbutton" style="position: absolute; right: 15px; margin-top: 10px; ">下一页</a>
+        </div>
+
+
+        <div style="margin-top: 70px;">
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+
+            <div class="userDiv">
+                <div class="inputDiv">
+                    <div>
+                        <label>姓名</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>日期</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>手机号</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                    <div>
+                        <label>推荐人</label>
+                        <input class="easyui-textbox" data-options="editable: false, " />
+                    </div>
+                </div>
+                <a class="more-btn easyui-linkbutton ">详情</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="win" class="easyui-window"
+        data-options="collapsible: false, minimizable: false, maximizable: false, closable: true, closed: true, "
+        style="width: 80%; height: fit-content; " title="条件筛选">
+        <div class="win-inputDiv" style="width: fit-content; height: fit-content; margin-right: 20px; ">
+            <div>
+                <label class="inputLabel">姓名</label>
+                <input class="easyui-textbox" />
+            </div>
+            <div>
+                <label class="inputLabel">日期</label>
+                <input class="easyui-textbox" />
+            </div>
+            <div>
+                <label class="inputLabel">手机号</label>
+                <input class="easyui-textbox" />
+            </div>
+            <div>
+                <label class="inputLabel">推荐人</label>
+                <input class="easyui-textbox" />
+            </div>
+        </div>
+        <a id="save-btn" class="easyui-linkbutton"
+            style="width: 60px; margin-top: 30px; margin-bottom: 25px; margin-left: 70px; ">搜索</a>
+        <a id="close-btn" class="easyui-linkbutton"
+            style="width: 60px; margin-top: 30px; margin-bottom: 25px; margin-left: 20px; ">取消</a>
+    </div>
+
+
+    <script src="../../node_modules/easyui/jquery.min.js"></script>
+    <script src="../../node_modules/easyui/jquery.easyui.min.js"></script>
+    <script src="../../node_modules/easyui/jquery.easyui.mobile.js"></script>
+    <script src="../../node_modules/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="application/javascript">
+
+        $(document).ready(function () {
+            //搜索 页面
+            $("#search-btn").linkbutton({
+                onClick: function () {
+                    $("#win").window("open")
+                }
+            })
+
+
+            //条件筛选 页面
+            $("#save-btn").linkbutton({
+                onClick: function () {
+                    $("#win").window("close")
+                }
+            })
+            $("#close-btn").linkbutton({
+                onClick: function () {
+                    $("#win").window("close")
+                }
+            })
+
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
